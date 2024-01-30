@@ -1,0 +1,16 @@
+npm install @thirdweb-dev/sdk ethers@5
+
+import { TaikoKatlaL2 } from "@thirdweb-dev/chains";
+import { ThirdwebSDK } from "@thirdweb-dev/sdk";
+
+// If used on the FRONTEND pass your 'bea192df715fc162a12a73f060a1e0f0'
+const sdk = new ThirdwebSDK(TaikoKatlaL2, {
+  clientId: "YOUR_CLIENT_ID",
+});
+// --- OR ---
+// If used on the BACKEND pass your '-Z0...x2nw'
+const sdk = new ThirdwebSDK(TaikoKatlaL2, {
+  secretKey: "YOUR_SECRET_KEY",
+});
+
+const contract = await sdk.getContract("0xFDCb06eF595A611e389a9d646c435C219f6eafA8");
